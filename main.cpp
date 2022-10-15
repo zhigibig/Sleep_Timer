@@ -7,6 +7,7 @@ struct Time {
 };
 
 int sleep_time(); 
+void shut_down();
 
 int main() {
   using namespace std;
@@ -31,4 +32,8 @@ int sleep_time() {
 
   // how function can return the list?
   return 0;
+};
+
+void shut_down() {
+  //code
 };

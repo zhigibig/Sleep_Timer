@@ -1,13 +1,27 @@
 #include <iostream>
 #include <stdio.h>
+#include <unistd.h>
+
+
 
 struct Time {
   int hours;
   int minutes;
 };
 
+#define Time sleep_time
+
+
+
 int sleep_time(); 
+
 void shut_down();
+
+void clear_terminal();
+
+void show_timer();
+
+
 
 int main() {
   using namespace std;
@@ -19,21 +33,41 @@ int main() {
   return 0;
 };
 
+
+
 int sleep_time() {
-  // this function is getting time from user
-  
+  // this function is getting time from user 
   using namespace std;
 
-  int digits[10];
-
-  for(int i = 0; i < 10; i++) {
-    digits[i] = i;  
+  unsigned int minutes;
+  
+  bool key = true;
+  while (key == true) {
+  cout << "Введите количество минут после которых компьютер будет выключен в диапазоне от 1 минуты до 90 минут." << endl << "Компьютер будет выключен через - ";
+  cin >> minutes;
+  cout << " мин" << endl;
+  
+  if (minutes >= 1 && minutes <= 90) {
+    key == false;
+    };
   };
 
-  // how function can return the list?
+  
+
   return 0;
 };
 
 void shut_down() {
-  //code
+  system("shutdown -h now");
 };
+
+void clear_terminal() {
+  for (int i = 0; i < 100; i++) {
+    printf("\n");
+  };
+};
+
+void show_timer() {
+  // code
+};
+

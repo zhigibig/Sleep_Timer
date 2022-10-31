@@ -12,7 +12,7 @@
 unsigned long int get_time(); 
 void shut_down();
 void clear_terminal();
-void print_time(unsigned int t);
+void print_time(unsigned long int t);
 
 
 

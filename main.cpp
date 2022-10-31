@@ -18,8 +18,8 @@ void do_sleep(long int);
 
 int main() {
   using namespace std;
-  unsigned long int sleeping_time = get_time();
-  unsigned long int sec = 1000000;
+  long int sleeping_time = get_time();
+  int sec = 1000000;
 
   for (unsigned long int i = sleeping_time; i > 0; i -= sec) {
     clear_terminal();
@@ -37,11 +37,11 @@ int main() {
 
 
 
-unsigned long int get_time() {
+long int get_time() {
   // this function is getting time from user 
   using namespace std;
 
-  unsigned long int time;
+  long int time;
   
   bool key = true;
   while (key == true) {
@@ -73,9 +73,9 @@ void clear_terminal() {
 void print_time(long int int t) {
   using namespace std;
 
-  unsigned long int hours = t / 3600000000;
-  unsigned long int minutes = t / 60000000;
-  unsigned long int seconds = (t  % 60000000) / 1000000;
+  long int hours = t / 3600000000;
+  long int minutes = t / 60000000;
+  long int seconds = (t  % 60000000) / 1000000;
 
   string stars = "**************************************";
   string timer_txt = "**              TIMER               **";

@@ -1,24 +1,17 @@
 #include <iostream>
 #include <stdio.h>
-#include <unistd.h>
 #include <iomanip>
-
-
-
-struct Time {
-  int hours;
-  int minutes;
-  int seconds;
-};
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
 
 
 
 unsigned long int get_time(); 
-
 void shut_down();
-
 void clear_terminal();
-
 void print_time(unsigned int t);
 
 
@@ -64,7 +57,11 @@ unsigned long int get_time() {
 };
 
 void shut_down() {
-  system("shutdown -h now");
+  #ifdef _WIN32
+    system("shutdown -s -t 0");
+  #else
+    system("shutdown -h now");
+  #endif
 };
 
 void clear_terminal() {

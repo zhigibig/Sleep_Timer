@@ -20,8 +20,6 @@ void shut_down();
 
 void clear_terminal();
 
-void show_timer();
-
 void print_time(unsigned int t);
 
 
@@ -62,10 +60,8 @@ unsigned long int get_time() {
     if (time >= 1 && time <= 90) {
       key = false;
     };
-
-    time = time * 60 * 1000000;
   };
-  return time;
+  return time * 60 * 1000000;
 };
 
 void shut_down() {

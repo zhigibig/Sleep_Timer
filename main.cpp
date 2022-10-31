@@ -12,8 +12,8 @@
 unsigned long int get_time(); 
 void shut_down();
 void clear_terminal();
-void print_time(unsigned int t);
-void do_sleep(unsigned long int);
+void print_time(long int t);
+void do_sleep(long int);
 
 
 int main() {
@@ -70,7 +70,7 @@ void clear_terminal() {
   };
 };
 
-void print_time(unsigned int t) {
+void print_time(long int int t) {
   using namespace std;
 
   unsigned long int hours = t / 3600000000;

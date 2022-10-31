@@ -25,7 +25,7 @@ int main() {
     clear_terminal();
     print_time(i);
     sleeping_time -= sec;
-    pause(sec);
+    do_sleep(sec);
   };
   
   if (sleeping_time <= 0) {
@@ -90,7 +90,7 @@ void print_time(unsigned int t) {
   cout << stars << endl;
 };
 
-void pause(unsigned long int time) {
+void do_sleep(long int time) {
   #ifdef _WIN32
     Sleep(((double) time) / 1000000f);
   #else

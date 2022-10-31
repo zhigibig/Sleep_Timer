@@ -12,8 +12,8 @@
 unsigned long int get_time(); 
 void shut_down();
 void clear_terminal();
-void print_time(unsigned long int t);
-
+void print_time(unsigned int t);
+void pause(unsigned long int);
 
 
 int main() {
@@ -25,7 +25,7 @@ int main() {
     clear_terminal();
     print_time(i);
     sleeping_time -= sec;
-    usleep(sec);
+    pause(sec);
   };
   
   if (sleeping_time <= 0) {
@@ -89,3 +89,12 @@ void print_time(unsigned int t) {
   cout << "**" << "   " << setw(3) << hours << "   " << "**" << "   " << setw(3) << minutes << "     " << "**" << "   " << setw(3) << seconds << "    " << "**" << endl;
   cout << stars << endl;
 };
+
+void pause(unsigned long int time) {
+  #ifdef _WIN32
+    Sleep(((double) time) / 1000000f);
+  #else
+    usleep(time);
+  #endif
+};
+

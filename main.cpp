@@ -70,7 +70,7 @@ void clear_terminal() {
   };
 };
 
-void print_time(long int int t) {
+void print_time(long int t) {
   using namespace std;
 
   long int hours = t / 3600000000;
@@ -97,4 +97,3 @@ void do_sleep(long int time) {
     usleep(time);
   #endif
 };
-

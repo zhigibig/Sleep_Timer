@@ -13,7 +13,7 @@ unsigned long int get_time();
 void shut_down();
 void clear_terminal();
 void print_time(unsigned int t);
-void pause(unsigned long int);
+void do_sleep(unsigned long int);
 
 
 int main() {
@@ -92,7 +92,7 @@ void print_time(unsigned int t) {
 
 void do_sleep(long int time) {
   #ifdef _WIN32
-    Sleep(((double) time) / 1000000f);
+    Sleep(((double) time));
   #else
     usleep(time);
   #endif

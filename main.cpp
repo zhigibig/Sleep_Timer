@@ -16,6 +16,7 @@ void print_time(long int);
 void do_sleep(long int);
 
 
+
 int main() {
   using namespace std;
   long int sleeping_time = get_time();
@@ -24,7 +25,9 @@ int main() {
   for (unsigned long int i = sleeping_time; i > 0; i -= sec) {
     clear_terminal();
     print_time(i);
+    
     sleeping_time -= sec;
+    
     do_sleep(sec);
   };
   
@@ -53,6 +56,7 @@ long int get_time() {
       key = false;
     };
   };
+  
   return time * 60 * 1000000;
 };
 
